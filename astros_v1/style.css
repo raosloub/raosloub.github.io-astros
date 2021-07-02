@@ -1,0 +1,323 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+nav {
+    background-color: #949494;
+    padding: 7px 0;
+}
+
+.loading {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading img {
+    width: 100px;
+}
+
+.loading.loaded {
+    display: none;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.wrapper.fetching {
+    display: none;
+}
+
+.wrapper_inner {
+    display: grid;    
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters form {
+    display: flex;
+}
+.filters select {
+    padding: 10px;
+}
+
+.filters form .filter_section {
+    margin: 0px 10px;
+}
+
+.filters form .filter_section label {
+    display: inline-block;
+    margin: 6px 0px;
+    font-weight: bolder;
+}
+
+.headers {
+    display: flex;
+    justify-content: space-evenly;
+    color: #0e7492;
+}
+
+.headers p {
+    flex: 1;
+}
+/* single event card */
+
+#all_events {
+    height: 100vh;
+    overflow-y: scroll;
+    padding-right: 20px;
+}
+
+.event {
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 20px 0px;
+}
+
+
+.event.filter_out {
+    display: none;
+}
+
+
+/* .event > div:not(.event_players) {
+    flex: 1;
+} */
+
+.event > div {
+    flex: 1 0 0;
+}
+
+.event_balls_to_strikes,
+.event_players {
+    /* border-left: 1px solid #000;
+    border-right: 1px solid #000; */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.event_players {
+    display: flex;
+}
+
+.event_batter,
+.event_pitcher {
+    display: flex;
+    align-items: center;
+}
+
+.event_batter img,
+.event_pitcher img {
+    width: 20px;
+    height: 20px;
+    margin: 8px;
+}
+
+.event_players > p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.event_link {
+    text-align: right;
+    font-size: 24px;
+}
+
+.event_link button {
+    outline: 0;
+    border: 1px solid rgb(14 116 146);
+    color: rgb(14 116 146);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+#general_stats {
+    border: 1px solid #f3f3f3;
+}
+
+#general_stats h2 {
+    text-align: center;
+}
+
+/* SINGLE EVENT ******/
+
+.single_event {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.single_event.hide {
+    display: none;
+}
+
+.single_event_modal {
+    width: 70%;
+    min-height: 70vh;
+    background-color: #fff;
+    margin: 5vh auto;
+    position: relative;
+    padding: 10px 30px;
+}
+
+.close_single_event_modal_btn {
+    text-align: right;
+}
+
+.close_single_event_modal_btn button {
+    outline: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.close_single_event_modal_btn .fas {
+    font-size: 30px;
+    color: rgb(248, 44, 44);
+}
+
+.single_event .teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.single_event .teams strong {
+    font-size: 20px;
+}
+
+.single_event_teams {
+    width: 80%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.single_event_teams > div {
+    border: 1px solid rgb(167, 167, 167);
+    padding: 0px 20px;
+    border-radius: 4px;
+}
+
+.single_team_event_batting_team p,
+.single_team_event_fielding_team p,
+.single_event_pitch_name p,
+.single_event_result p {
+    font-size: 12px;
+}
+
+.single_team_event_batting_team span,
+.single_team_event_fielding_team span,
+.single_event_pitch_name span,
+.single_event_result span,
+.single_event_batter span,
+.single_event_pitcher span {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.single_event_balls,
+.single_event_strikes {
+    text-align: center;
+    font-size: 30px;
+}
+
+.single_event_balls p,
+.single_event_strikes p {
+    padding: 0;
+    margin: 10px;
+}
+
+.single_events_graphs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    text-align: center;
+}
+
+/* END SINGLE EVENT */
+
+@media(max-width: 768px) {
+
+    .filters form {
+        flex-direction: column;
+    }
+
+    .filters form select {
+        width: 100%;
+    }
+
+    .wrapper_inner {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .headers {
+        flex-direction: column;
+    }
+
+    .headers p {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .event {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .event_balls_to_strikes, .event_players {
+        padding: 0;
+    }
+
+    .event_result {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .single_event_teams {
+        grid-template-columns: 1fr;
+    }
+
+    .single_team_event_batting_team span, 
+    .single_team_event_fielding_team span, 
+    .single_event_pitch_name span, 
+    .single_event_result span, 
+    .single_event_batter span, 
+    .single_event_pitcher span{
+        font-size: unset;
+    }
+
+    .single_events_graphs{
+        display: flex;
+        flex-direction: column;
+    }
+}

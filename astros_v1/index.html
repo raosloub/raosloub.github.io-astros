@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astros</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <h2>Astros</h2>
+        </div>
+    </nav>
+
+    <div class="container content">
+
+        <div class="loading">
+            <img src="./images/loading.gif" alt="loading">
+            <p>Loading ...</p>
+        </div>
+
+        <div class="wrapper fetching">
+        
+            <!--- filters ---->
+            <div class="filters">
+                <form action="">
+                    <div class="filter_section">
+                    <label><small>Pitch type</small></label>
+                    <br />
+                    <select name="" id="filter_pitch">
+                        <option selected value="all">Select pitch type</option>
+                    </select>
+                    </div>
+
+                    <div class="filter_section">
+                    <label><small>Inning</small></label>
+                    <br />
+                    <select name="" id="filter_inning">
+                        <option selected value="all">Select inning</option>
+                        <option value="1">Top</option>
+                        <option value="0">Bottom</option>
+                    </select>
+                    </div>
+
+                    <div class="filter_section">
+                    <label><small>Event result</small></label>
+                    <br />
+                    <select name="" id="filter_result">
+                        <option selected value="all">Select result</option>
+                    </select>
+                    </div>
+                </form>
+            </div>
+            <!--- / end filters ----->
+
+            <div class="wrapper_inner">
+                <section id="all_events">            
+                    <!-----header ------>
+                    <div class="headers">
+                        <p><strong>Inning</strong></p>
+                        <p><strong>Balls x Strikes</strong></p>
+                        <p><strong>Pitch</strong></p>
+                        <p><strong>Players</strong></p>
+                        <p><strong>Event result</strong></p>
+                    </div>
+                    <!---/ end header -->
+                    
+                </section>
+
+        <section id="general_stats">
+            <!--- how pitches compare -->
+            <h2>How pitch types compare</h2>
+            <canvas id="pitchData"></canvas>
+            <!--- how pitches compare -->
+
+            <!--- how initial speeds compare -->
+            <!-- <h2>Initial speeds</h2>
+            <canvas id="initialSpeedsData"></canvas> -->
+            <!--- how initial speeds compare -->
+
+        </section>
+        
+        </div>
+
+        </div>
+
+        <!-- single event modal ------->
+        <div class="single_event hide">
+
+            <div class="single_event_modal">
+                <div class="close_single_event_modal_btn" title="Close modal"><button><i class="fas fa-times"></i></button></div>
+
+                <div class="single_event_details"></div>
+
+                <div class="single_events_graphs">
+                   
+                    <div class="positions_graph">
+                        <h5>Initial speed vs plate speed (mph)</h5>
+                        <canvas id="event_numerical_stats"></canvas>
+                    </div>
+                    
+                    <div class="accel_graph">
+                        <h5>Acceleration</h5>
+                        <canvas id="accel"></canvas>
+                    </div>
+
+                    <div class="velocity_graph">
+                        <h5>Velocity</h5>
+                        <canvas id="velocity"></canvas>
+                    </div>
+
+                    <div class="positions_graph">
+                        <h5>Positions</h5>
+                        <canvas id="event_positions"></canvas>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /end single event modal -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/index.js"></script>    
+</body>
+</html>
